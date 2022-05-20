@@ -120,3 +120,48 @@ class ArrCommander {
   console.log(arrCommander1);
   console.log(arrCommander1.getBiggerArr(1));
   console.log(arrCommander1.getCurrentArr());
+
+
+  // 4
+// Напишите функцию, которая вычисляет длину линий в стандартной двухмерной системе координат. Координаты начала и конца линий должны храниться в объектах.
+//  Создайте три линии.
+//  Вычислите их длины с помощью функции
+//  Проверьте, могут ли три линии сформировать треугольник
+// Помните:
+// Длину линии можно найти по теореме Пифагора.
+// Стороны могут сформировать еугольника должны быть меньше суммы длин остальных сторон.
+
+class Line {
+    constructor(startX, startY, endX, endY) {
+      this.startX = startX;
+      this.startY = startY;
+      this.endX = endX;
+      this.endY = endY;
+    }
+  
+    calcLineLength = function() {
+      const res = Math.sqrt(Math.pow(this.endY - this.startY, 2) + Math.pow(this.endX - this.startX, 2));
+      return Math.round(res);
+    }
+  
+    isTriangle = function(l1, l2, l3) {
+      if(l1 < (l2 + l3)) {
+        console.log('It is triangle');
+      } else {
+        console.log('It is not triangle');
+      }
+    }
+  }
+
+  const line1 = new Line(5, 6, 14, 12);
+console.log(line1);
+console.log(line1.calcLineLength());
+line1.isTriangle(line1, line2, line3);
+
+const line2 = new Line(7, 8, 10, 3);
+console.log(line2);
+console.log(line2.calcLineLength());
+
+const line3 = new Line(12, 4, 8, 11);
+console.log(line3);
+console.log(line3.calcLineLength());
