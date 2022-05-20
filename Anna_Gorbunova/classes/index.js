@@ -100,3 +100,23 @@ class Device {
 console.log(tabletIPad);
 tabletIPad.switchDevice();
 tabletIPad.watchMovies('Ghost busters');
+
+
+// 3. Создать класс arrCommander, конструктор которого принимает массив чисел. Конструктор должен создавать
+// метод getBiggerArr(), который принимает число и возвращает массив, где каждый элемент увеличен на это число и метод getCurrentArr(), который возвращает текущий массив.
+
+class ArrCommander {
+    constructor(arrNumber) {
+      this.arrNumber = arrNumber;
+      this.getBiggerArr = function(number) {
+        const arrResults = arrNumber.map(num => num + number);
+        return arrResults;
+      }
+      this.getCurrentArr = () => arrNumber;
+    } 
+  }
+  
+  const arrCommander1 = new ArrCommander([3, 45, 12, 63, 77]);
+  console.log(arrCommander1);
+  console.log(arrCommander1.getBiggerArr(1));
+  console.log(arrCommander1.getCurrentArr());
